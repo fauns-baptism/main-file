@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main HTML file</title>
+</head>
+<body>
+    <h1>My Website</h1>
+    <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <hr>
+    <!-- Include content from about.html here -->
+    <div id="about-content"></div>
+    <hr>
+    <!-- Include content from contact.html here -->
+    <div id="contact-content"></div>
+
+    <script>
+        // Use JavaScript to load content from separate files
+        fetch('about.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('about-content').innerHTML = data;
+            });
+
+        fetch('contact.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('contact-content').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
